@@ -7,6 +7,7 @@ import {
   OneToMany,
 } from 'typeorm';
 import { Payment } from '../../payments/entities/payment.entity';
+import { Conversation } from '../../chat/entities/conversation.entity';
 
 export enum UserRole {
   ADMIN = 'admin',
@@ -42,6 +43,12 @@ export class User {
 
   @OneToMany(() => Payment, (payment) => payment.user)
   payments: Payment[];
+
+  @OneToMany(() => Conversation, (conversation) => conversation.customer)
+  customerConversations: Conversation[];
+
+  @OneToMany(() => Conversation, (conversation) => conversation.admin)
+  adminConversations: Conversation[];
 
   @CreateDateColumn()
   createdAt: Date;

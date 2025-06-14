@@ -1,6 +1,9 @@
 import { DataSource } from 'typeorm';
 import { User } from '../modules/users/entities/user.entity';
 import { Payment } from '../modules/payments/entities/payment.entity';
+import { Conversation } from '../modules/chat/entities/conversation.entity';
+import { Message } from '../modules/chat/entities/message.entity';
+import { ChatTemplate } from '../modules/chat/entities/chat-template.entity';
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
@@ -11,7 +14,7 @@ export const AppDataSource = new DataSource({
   database: process.env.DB_NAME || 'nestjs_backend',
   synchronize: false,
   logging: true,
-  entities: [User, Payment],
+  entities: [User, Payment, Conversation, Message, ChatTemplate],
   migrations: ['src/database/migrations/*.ts'],
   subscribers: ['src/database/subscribers/*.ts'],
 });

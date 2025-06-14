@@ -14,6 +14,7 @@ import { PaymentsModule } from './modules/payments/payments.module';
 import { EmailsModule } from './modules/emails/emails.module';
 import { QueuesModule } from './modules/queues/queues.module';
 import { HealthModule } from './modules/health/health.module';
+import { ChatModule } from './modules/chat/chat.module';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -80,6 +81,7 @@ import { redisConfig } from './config/redis.config';
     EmailsModule,
     QueuesModule,
     HealthModule,
+    ChatModule,
   ],
   controllers: [AppController],
   providers: [AppService],
