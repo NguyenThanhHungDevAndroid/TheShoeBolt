@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { CacheModule } from '@nestjs/cache-manager';
 import { WinstonModule } from 'nest-winston';
 import * as winston from 'winston';
-import { redisStore } from 'cache-manager-redis-store';
+import { redisStore } from 'cache-manager-redis-yet';
 
 import { DatabaseModule } from './database/database.module';
 import { AuthModule } from './modules/auth/auth.module';
